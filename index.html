@@ -38,7 +38,8 @@
             color: #FFE81F;
             overflow-x: hidden;
         }
-
+        
+        /* Star Wars Opening Styles - FIXED WITH WORKING ANIMATION */
         .opening-container {
             position: fixed;
             top: 0;
@@ -63,6 +64,9 @@
             0% { transform: translateY(0); }
             100% { transform: translateY(-2000px); }
         }
+        
+        /* Galaxy text - appears first, then fades out */
+/* Galaxy text - centered and proper font */
 .galaxy-text {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: #4bd5ee;
@@ -93,6 +97,8 @@
         opacity: 0;
     }
 }
+
+/* Main Title - Slower animation */
 .main-title {
   font-family: 'sf-distant-galaxy', 'Orbitron', sans-serif !important;
   font-size: 7rem;
@@ -142,8 +148,8 @@
     height: 100%;
     perspective: 1000px;
     perspective-origin: 50% 80%;
-    opacity: 1;
-    animation: none;
+    opacity: 1; /* Remove fade-in */
+    animation: none; /* No fade-in effect */
     overflow: hidden;
     mask-image: linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%);
   -webkit-mask-image: linear-gradient(to top, transparent 0%, black 15%, black 85%, transparent 100%);
@@ -184,13 +190,17 @@
 @keyframes crawl {
   0% {
     top: 100%;
-    transform: translateX(-50%) rotateX(25deg) scale(1);
+    transform: translateX(-50%) rotateX(25deg) scale(1);  /* ✅ Gentle rotation */
   }
   100% {
     top: -300%;
-    transform: translateX(-50%) rotateX(25deg) scale(0.3);
+    transform: translateX(-50%) rotateX(25deg) scale(0.3);  /* ✅ Shrinks into space */
   }
 }
+
+
+
+
         
         .skip-intro {
             position: absolute;
@@ -214,6 +224,8 @@
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
         }
+        
+        /* Main Site Styles */
         .main-site {
             display: none;
             min-height: 100vh;
@@ -302,8 +314,10 @@
         .nav-links a:hover::before {
             left: 100%;
         }
-        .nav-links a:nth-child(1):hover,
-        .nav-links a:nth-child(4):hover {
+        
+        /* Navigation Hover Colors */
+        .nav-links a:nth-child(1):hover, /* Home */
+        .nav-links a:nth-child(4):hover { /* Skills */
             color: #FFE81F;
             background: rgba(255, 232, 31, 0.1);
             border-color: #FFE81F;
@@ -311,8 +325,8 @@
             box-shadow: 0 5px 15px rgba(255, 232, 31, 0.2);
         }
         
-        .nav-links a:nth-child(2):hover,
-        .nav-links a:nth-child(6):hover {
+        .nav-links a:nth-child(2):hover, /* Experience */
+        .nav-links a:nth-child(6):hover { /* Contact */
             color: #ff4444;
             border-color: #ff4444;
             background: rgba(255, 68, 68, 0.1);
@@ -320,8 +334,8 @@
             box-shadow: 0 5px 15px rgba(255, 68, 68, 0.2);
         }
         
-        .nav-links a:nth-child(3):hover,
-        .nav-links a:nth-child(5):hover {
+        .nav-links a:nth-child(3):hover, /* Projects */
+        .nav-links a:nth-child(5):hover { /* Education */
             color: #4488ff;
             border-color: #4488ff;
             background: rgba(68, 136, 255, 0.1);
@@ -434,6 +448,7 @@
             animation: titlePulse 4s ease-in-out infinite;
         }
         
+        /* Section Title Colors */
         #experience .section-title {
             color: #ff4444;
             text-shadow: 0 0 25px rgba(255, 68, 68, 0.5);
@@ -480,7 +495,8 @@
             0%, 100% { width: 100px; opacity: 0.5; }
             50% { width: 200px; opacity: 1; }
         }
-
+        
+        /* Experience Items - RED SITH THEME */
         .experience-item {
             background: rgba(0, 0, 0, 0.7);
             border: 1px solid rgba(255, 68, 68, 0.4);
@@ -562,7 +578,8 @@
             0%, 100% { opacity: 0.7; }
             50% { opacity: 1; }
         }
-
+        
+        /* Project Items - ALTERNATING BLUE/RED */
         .project-item {
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(12px);
@@ -576,12 +593,12 @@
 }
 
 .project-item:nth-child(odd) {
-  border: 1px solid rgba(68, 136, 255, 0.5); 
+  border: 1px solid rgba(68, 136, 255, 0.5); /* Blue */
   box-shadow: 0 0 25px rgba(68, 136, 255, 0.2);
 }
 
 .project-item:nth-child(even) {
-  border: 1px solid rgba(255, 68, 68, 0.5);  
+  border: 1px solid rgba(255, 68, 68, 0.5);  /* Red */
   box-shadow: 0 0 25px rgba(255, 68, 68, 0.2);
 }
 
@@ -681,7 +698,8 @@
             font-size: 0.8rem;
             animation: arrowPulse 2s ease-in-out infinite;
         }
-
+        
+        /* Skills Grid */
         .skills-grid {
             display: flex;
             flex-direction: column;
@@ -763,6 +781,7 @@
             font-weight: 300;
         }
         
+        /* Education Items - BLUE JEDI THEME */
         .education-item {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(68, 136, 255, 0.4);
@@ -819,7 +838,8 @@
             left: 0;
             font-size: 0.7rem;
         }
-
+        
+        /* Contact Form - RED SITH THEME */
         .contact-form {
             max-width: 600px;
             margin: 0 auto;
@@ -1003,6 +1023,13 @@
     <div class="main-site" id="mainSite">
         <div class="space-bg"></div>
         <div class="stars"></div>
+        <div class="floating-elements">
+            <div class="floating-element" style="left: 10%; animation-delay: 0s;">⭐</div>
+            <div class="floating-element" style="left: 20%; animation-delay: 5s;">🚀</div>
+            <div class="floating-element" style="left: 70%; animation-delay: 10s;">⚡</div>
+            <div class="floating-element" style="left: 80%; animation-delay: 15s;">💫</div>
+        </div>
+
         <nav class="navbar">
             <div class="nav-content">
                 <div class="logo">TANAY.DEV</div>
@@ -1080,6 +1107,18 @@
             </div>
 
             <div class="project-item">
+                <h3>The All-Knowing Horse 🐴</h3>
+                <div class="tech">Machine Learning • GPT-4 Review System • Open Source</div>
+                <ul>
+                    <li>Yes/No decision engine powered by meme-aware sarcasm</li>
+                    <li>Retrains via GPT-reviewed user feedback</li>
+                    <li>Deployed with Vercel (frontend) and Render (private ML backend)</li>
+                    <li>Justified 500+ curious mortals and counting</li>
+                </ul>
+            </div>
+
+
+            <div class="project-item">
                 <h3>ClutterCutter</h3>
                 <div class="tech">Web Scraping • AI Summarization • Automated Reporting</div>
                 <ul>
@@ -1141,7 +1180,7 @@
                 <div class="institution">MIT Manipal, Udupi, KA | Expected 2027</div>
                 <ul>
                     <li>Current CGPA: 8.72/10</li>
-                    <li>Debate Team Adjudicator - Mastering the art of judgement</li>
+                    <li>Debate Team Adjudicator - Mastering the art of persuasion</li>
                     <li>Active participant in technological innovation projects</li>
                 </ul>
             </div>
@@ -1152,7 +1191,7 @@
                 <ul>
                     <li>Class 12 Board Examinations: 96% (Perfect 100% in Mathematics)</li>
                     <li>Dr. RN Mukherjee Award for Excellence in Mathematics</li>
-                    <li>Medha Samman Award for Outstanding Board Examination Performance</li>
+                    <li>Medha Samman Award for Outstanding Board Performance</li>
                 </ul>
             </div>
 
@@ -1189,7 +1228,7 @@
                     
                     <button type="submit" class="submit-btn">Send Transmission</button>
                     <div id="transmission-message" style="display:none; color: #FFE81F; text-align: center; margin-top: 1rem; font-family: 'Audiowide', sans-serif;">
-                            📡 Transmission in progress! Reach out via email for more!.
+                            📡 Transmission received! Tanay will respond soon.
                     </div>
 
                 </form>
